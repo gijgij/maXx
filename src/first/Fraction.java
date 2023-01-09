@@ -4,7 +4,11 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 /**
+<<<<<<< HEAD
  * @author Giovanna Janeiro, Ann-Katrin SChließus, Julia Keck, Izabela Almeida;
+=======
+ * @author Nico Vogel
+>>>>>>> f8ac0d7 (Fraction eingefügt)
  * @version 1.0
  */
 
