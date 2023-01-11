@@ -4,13 +4,12 @@ package first;
  * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
  * */
 public class Ablauf {
-    private static Spiel spiel;
 
-    public Ablauf() {
-        this.spiel = new Spiel();
-    }
+
 
     public static void main(String[] args) {
+
+        Spiel spiel = new Spiel();
 
         //Spielbeginn Dialog
         System.out.println("Wer am schnellsten über 53 Punkte erreicht, gewinnt!!!");

@@ -16,9 +16,10 @@ public class Brett {
     }
 
     public void resetBrett() {
-        for (Feld[] n : brett) {
-            for (Feld m : n) {
-                m = Feld.FRACTION;
+
+        for (int i = 0; i < 8; i++) {
+            for (int k = 0; k < 8; k++) {
+                brett[i][k] = new Field(Feldtyp.FRACTION);
             }
         }
         brett[2][3] = Feld.ZERO;

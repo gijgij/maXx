@@ -13,7 +13,7 @@ public class Spiel {
     }
 
     public void inputVomSpieler(Spieler aktuellerSpieler) {
-        //TODO spielern Richtungen erklären
+
         String input = MyIO.promptAndRead(aktuellerSpieler.getFarbe().toString() + " ist dran.\rGeben Sie eine Richtung ein, um den Spieler zu bewegen:");
 
         boolean tryagain = true;
