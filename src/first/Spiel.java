@@ -1,5 +1,9 @@
 package first;
 
+/**
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * */
+
 public class Spiel {
 
     private Brett pitt;

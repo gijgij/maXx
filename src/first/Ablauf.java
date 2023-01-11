@@ -1,5 +1,8 @@
 package first;
 
+/**
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * */
 public class Ablauf {
     private static Spiel spiel;
 

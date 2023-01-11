@@ -1,5 +1,9 @@
 package first;
 
+/**
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * */
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,7 +11,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
- * @author Nico Vogel, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * @author Izabela ALmeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
  * @version 1.0
  */
 

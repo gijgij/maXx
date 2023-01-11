@@ -1,5 +1,8 @@
 package first;
 
+/**
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * */
 public class Brett {
     private Feld[][] brett = new Feld[8][8];
 

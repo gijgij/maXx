@@ -1,5 +1,8 @@
 package first;
 
+/**
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * */
 public enum Farbe {
     W(new int[]{2, 3}),
     B(new int[]{5, 4});

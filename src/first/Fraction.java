@@ -1,5 +1,9 @@
 package first;
 
+/**
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * */
+
 import java.math.BigInteger;
 import java.util.Objects;
 

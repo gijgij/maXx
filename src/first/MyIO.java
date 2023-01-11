@@ -5,8 +5,7 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
- * @version 4.0
- * @author Nico Vogel, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
  * */
 
 public class MyIO {
