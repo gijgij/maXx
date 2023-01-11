@@ -101,7 +101,7 @@ public class Spiel {
 
         Field aktuellesFeld = pitt.getFeld(neuePosition[0],neuePosition[1]);
 
-        aktuellerSpieler.addPunkte(aktuellesFeld.getInhalt()[0] / aktuellesFeld.getInhalt()[1]); //TODO passt des?
+        aktuellerSpieler.addPunkte( (double)aktuellesFeld.getInhalt()[0] / (double)aktuellesFeld.getInhalt()[1]); //TODO passt des?
 
         pitt.setFeld(neuePosition[0],neuePosition[1],new Field(Feldtyp.ZERO));
     }

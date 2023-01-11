@@ -38,7 +38,7 @@ public class Spieler {
     }
 
     public void addPunkte(double punkte) {
-        Punkte = +punkte;
+        Punkte = Punkte + punkte;
     }
 
     public void resetPunkte() {
