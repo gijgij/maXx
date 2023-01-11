@@ -14,7 +14,7 @@ public class Ablauf {
         //Spielbeginn Dialog
         System.out.println("Wer am schnellsten über 53 Punkte erreicht, gewinnt!!!");
         System.out.println("Punkte können gesammelt werden, indem man sich in alle Himmelsrichtungen (N,O,S,W) bewegt.");
-        System.out.println("Ausnahmen sind: Spieler schwarz darf sich diagonal nach S-W bewegen und Spieler weiß darf sich diagonal nach N-O bewegen.");
+        System.out.println("Ausnahmen sind: Spieler schwarz darf sich diagNonal nach S-W bewegen und Spieler weiß darf sich diagonal nach N-O bewegen.");
         System.out.println("Das Spiel beginnt");
 
         Spieler aktuellerSpieler = spiel.getPitt().getSpielerW();
@@ -42,7 +42,7 @@ public class Ablauf {
             else if (aktuellerSpieler.getFarbe() == Farbe.B)
                 aktuellerSpieler = spiel.getPitt().getSpielerW();
 
-        } while (aktuellerSpieler.hatGewonnen());
+        } while (!aktuellerSpieler.hatGewonnen());
 
         System.out.println("Glückwunsch! " + aktuellerSpieler.getFarbe().toString() + " hat gewonnen!");
 

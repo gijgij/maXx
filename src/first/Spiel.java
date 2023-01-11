@@ -14,12 +14,12 @@ public class Spiel {
 
     public void inputVomSpieler(Spieler aktuellerSpieler) {
 
-        String input = MyIO.promptAndRead(aktuellerSpieler.getFarbe().toString() + " ist dran.\rGeben Sie eine Richtung ein, um den Spieler zu bewegen:");
-
         boolean tryagain = true;
         int[] neuePosition;
 
         do {
+            String input = MyIO.promptAndRead(aktuellerSpieler.getFarbe().toString() + " ist dran. Geben Sie eine Richtung ein, um den Spieler zu bewegen:");
+
             switch (input) {
                 case "N":
                     neuePosition = new int[]{aktuellerSpieler.getPosition()[0] - 1, aktuellerSpieler.getPosition()[1]};
@@ -29,7 +29,7 @@ public class Spiel {
                         tryagain = false;
                         break;
                     } else
-                        System.out.println("Bitte geben sie eine andere Richtung ein:");
+                        System.out.println("Bitte geben sie eine andere Richtung ein.");
                     break;
                 case "S":
                     neuePosition=new int[]{aktuellerSpieler.getPosition()[0] + 1, aktuellerSpieler.getPosition()[1]};
@@ -39,7 +39,7 @@ public class Spiel {
                         tryagain = false;
                         break;
                     } else
-                        System.out.println("Bitte geben sie eine andere Richtung ein:");
+                        System.out.println("Bitte geben sie eine andere Richtung ein.");
                     break;
                 case "W":
                     neuePosition =new int[]{aktuellerSpieler.getPosition()[0], aktuellerSpieler.getPosition()[1] - 1};
@@ -49,7 +49,7 @@ public class Spiel {
                         tryagain = false;
                         break;
                     } else
-                        System.out.println("Bitte geben sie eine andere Richtung ein:");
+                        System.out.println("Bitte geben sie eine andere Richtung ein.");
                     break;
                 case "O":
                     neuePosition = new int[]{aktuellerSpieler.getPosition()[0], aktuellerSpieler.getPosition()[1] + 1};
@@ -60,7 +60,7 @@ public class Spiel {
                         tryagain = false;
                         break;
                     } else
-                        System.out.println("Bitte geben sie eine andere Richtung ein:");
+                        System.out.println("Bitte geben sie eine andere Richtung ein.");
                     break;
                 case "NO":
                     // Weiß
@@ -71,7 +71,7 @@ public class Spiel {
                         tryagain = false;
                         break;
                     } else
-                        System.out.println("Bitte geben sie eine andere Richtung ein:");
+                        System.out.println("Bitte geben sie eine andere Richtung ein.");
                     break;
                 case "SW":
                     // Schwarz
@@ -82,18 +82,17 @@ public class Spiel {
                         tryagain = false;
                         break;
                     } else
-                        System.out.println("Bitte geben sie eine andere Richtung ein:");
+                        System.out.println("Bitte geben sie eine andere Richtung ein.");
                     break;
             }
         } while (tryagain);
     }
 
     public boolean checkNeuePosition(int[] neuePosition) {
-        boolean result = false;
-        result &= neuePosition[0]>=0 && neuePosition[0]<=7;
-        result &= neuePosition[1]>=0 && neuePosition[1]<=7;
-        result &= neuePosition[0] != pitt.getSpielerB().getPosition()[0] && neuePosition[1] != pitt.getSpielerB().getPosition()[1];
-        result &= neuePosition[0] != pitt.getSpielerW().getPosition()[0] && neuePosition[1] != pitt.getSpielerW().getPosition()[1];
+        boolean result = neuePosition[0]>=0 && neuePosition[0]<=7;
+        result = result &&  neuePosition[1]>=0 && neuePosition[1]<=7;
+        result = result && (neuePosition[0] != pitt.getSpielerB().getPosition()[0] || neuePosition[1] != pitt.getSpielerB().getPosition()[1]);
+        result = result && (neuePosition[0] != pitt.getSpielerW().getPosition()[0] || neuePosition[1] != pitt.getSpielerW().getPosition()[1]);
         return result;
     }
 
