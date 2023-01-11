@@ -6,8 +6,8 @@ public enum Feld {
     FRACTION("FRACTION");
 
     private int[] inhalt = new int[]{0, 1};
-    Feld(String){
-        if (this == "FRACTION"){
+    Feld(String fraction){
+        if (fraction == "FRACTION"){
             inhalt= new int[]{ThreadLocalRandom.current().nextInt(1 , 999), ThreadLocalRandom.current().nextInt(1 , 999)};
         }
     }
