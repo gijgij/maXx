@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 
 public class Fraction extends Number implements Comparable<Fraction> {
+    public static Fraction ZERO = new Fraction(0, 1);
     public final BigInteger numerator;
     public final BigInteger denominator;
 
