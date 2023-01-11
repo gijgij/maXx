@@ -3,8 +3,14 @@ package first;
 public class Brett {
     private Feld [][] brett = new Feld[8][8];
 
-    Spieler spielerB = new Spieler(Farbe.B);
-    Spieler spielerW = new Spieler(Farbe.W);
+    private Spieler spielerB;
+    private Spieler spielerW;
+
+    public Brett() {
+        this.spielerB = new Spieler(Farbe.B);
+        this.spielerW = new Spieler(Farbe.W);
+        resetBrett();
+    }
 
     public void resetBrett(){
         for (Feld[] n : brett){
@@ -15,14 +21,14 @@ public class Brett {
         brett[2][3]=Feld.ZERO; //TODO use Startposition
         brett[5][4]=Feld.ZERO; //TODO use Startposition
         //TODO reset spieler
-
-
     }
 
+    public Spieler getSpielerB() {
+        return spielerB;
+    }
 
-
-
-
-
+    public Spieler getSpielerW() {
+        return spielerW;
+    }
 }
 

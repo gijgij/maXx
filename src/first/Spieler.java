@@ -4,13 +4,17 @@ public class Spieler {
 
     private int[] position = new int[2];
     private final Farbe farbe;
-    private int Punkte;
+    private double Punkte;
 
     public Spieler( Farbe farbe) {
         this.position = farbe.getStartposition();
         this.farbe = farbe;
-        this.Punkte=0;
+        resetPunkte();
     }
+
+    public boolean hatGewonnen(){
+        return Punkte > 53;
+    };
 
     public void setPosition(int x, int y){
         position[0]=x;
@@ -25,11 +29,15 @@ public class Spieler {
         return farbe;
     }
 
-    public int getPunkte() {
+    public double getPunkte() {
         return Punkte;
     }
 
-    public void addPunkte(int punkte) {
+    public void addPunkte(double punkte) {
         Punkte=+punkte;
+    }
+
+    public void resetPunkte(){
+        Punkte = 0;
     }
 }
