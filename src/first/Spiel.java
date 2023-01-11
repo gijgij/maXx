@@ -2,47 +2,57 @@ package first;
 
 public class Spiel {
 
-    private Brett pit;
+    private Brett pitt;
 
     public Spiel() {
-        this.pit = new Brett();
+        this.pitt = new Brett();
     }
 
-    public void inputVomSpieler(Spieler aktuellerSpieler){
+    public void inputVomSpieler(Spieler aktuellerSpieler) {
         //TODO spielern Richtungen erklären
         String input = MyIO.promptAndRead(aktuellerSpieler.getFarbe().toString() + " ist dran.\rGeben Sie eine Richtung ein, um den Spieler zu bewegen:");
 
         boolean tryagain = true;
+        int[] neuePosition;
 
         do {
             switch (input) {
                 case "N":
-                    if (checkNeuePosition(aktuellerSpieler, new int[]{aktuellerSpieler.getPosition()[0] - 1, aktuellerSpieler.getPosition()[1]})) {
-                        //TODO bewegen
+                    neuePosition = new int[]{aktuellerSpieler.getPosition()[0] - 1, aktuellerSpieler.getPosition()[1]};
+                    if (checkNeuePosition(neuePosition)) {
+
+                        bewegen(aktuellerSpieler,neuePosition);
                         tryagain = false;
                         break;
                     } else
                         System.out.println("Bitte geben sie eine andere Richtung ein:");
                     break;
                 case "S":
-                    if (checkNeuePosition(aktuellerSpieler, new int[]{aktuellerSpieler.getPosition()[0] + 1, aktuellerSpieler.getPosition()[1]})) {
-                        //TODO bewegen
+                    neuePosition=new int[]{aktuellerSpieler.getPosition()[0] + 1, aktuellerSpieler.getPosition()[1]};
+                    if (checkNeuePosition( neuePosition )) {
+
+                        bewegen(aktuellerSpieler,neuePosition);
                         tryagain = false;
                         break;
                     } else
                         System.out.println("Bitte geben sie eine andere Richtung ein:");
                     break;
                 case "W":
-                    if (checkNeuePosition(aktuellerSpieler, new int[]{aktuellerSpieler.getPosition()[0], aktuellerSpieler.getPosition()[1] - 1})) {
-                        //TODO bewegen
+                    neuePosition =new int[]{aktuellerSpieler.getPosition()[0], aktuellerSpieler.getPosition()[1] - 1};
+                    if (checkNeuePosition(neuePosition)) {
+
+                        bewegen(aktuellerSpieler,neuePosition);
                         tryagain = false;
                         break;
                     } else
                         System.out.println("Bitte geben sie eine andere Richtung ein:");
                     break;
                 case "O":
-                    if (checkNeuePosition(aktuellerSpieler, new int[]{aktuellerSpieler.getPosition()[0], aktuellerSpieler.getPosition()[1] + 1})) {
-                        //TODO bewegen
+                    neuePosition = new int[]{aktuellerSpieler.getPosition()[0], aktuellerSpieler.getPosition()[1] + 1};
+                    if (checkNeuePosition(neuePosition)) {
+
+
+                        bewegen(aktuellerSpieler,neuePosition);
                         tryagain = false;
                         break;
                     } else
@@ -50,8 +60,10 @@ public class Spiel {
                     break;
                 case "NO":
                     // Weiß
-                    if (aktuellerSpieler.getFarbe() == Farbe.W && checkNeuePosition(aktuellerSpieler, new int[]{aktuellerSpieler.getPosition()[0] - 1, aktuellerSpieler.getPosition()[1] + 1})){
-                        //TODO bewegen
+                    neuePosition=new int[]{aktuellerSpieler.getPosition()[0] - 1, aktuellerSpieler.getPosition()[1] + 1};
+                    if (aktuellerSpieler.getFarbe() == Farbe.W && checkNeuePosition(neuePosition)) {
+
+                        bewegen(aktuellerSpieler,neuePosition);
                         tryagain = false;
                         break;
                     } else
@@ -59,29 +71,39 @@ public class Spiel {
                     break;
                 case "SW":
                     // Schwarz
-                    if (aktuellerSpieler.getFarbe() == Farbe.B && checkNeuePosition(aktuellerSpieler, new int[]{aktuellerSpieler.getPosition()[0] + 1, aktuellerSpieler.getPosition()[1] - 1})){
-                        //TODO bewegen
+                    neuePosition=new int[]{aktuellerSpieler.getPosition()[0] + 1, aktuellerSpieler.getPosition()[1] - 1};
+                    if (aktuellerSpieler.getFarbe() == Farbe.B && checkNeuePosition(neuePosition)) {
+
+                        bewegen(aktuellerSpieler,neuePosition);
                         tryagain = false;
                         break;
                     } else
                         System.out.println("Bitte geben sie eine andere Richtung ein:");
                     break;
             }
-        }while(tryagain);
+        } while (tryagain);
     }
 
-    public boolean checkNeuePosition(Spieler aktuellerSpieler, int[] neuePosition){
-        //TODO implement
-        return false; //TODO return statement
+    public boolean checkNeuePosition(int[] neuePosition) {
+        boolean result = false;
+        result &= neuePosition[0]>=0 && neuePosition[0]<=7;
+        result &= neuePosition[1]>=0 && neuePosition[1]<=7;
+        result &= neuePosition[0] != pitt.getSpielerB().getPosition()[0] && neuePosition[1] != pitt.getSpielerB().getPosition()[1];
+        result &= neuePosition[0] != pitt.getSpielerW().getPosition()[0] && neuePosition[1] != pitt.getSpielerW().getPosition()[1];
+        return result;
     }
-    public void bewegen(Spieler aktuellerSpieler, int[] neuePosition){
+
+    public void bewegen(Spieler aktuellerSpieler, int[] neuePosition) {
+        aktuellerSpieler.setPosition(neuePosition[0],neuePosition[1]);
+        //pitt[neuePosition[0]][neuePosition[1]] = Feld.ZERO;
+
         //TODO implement
         // - Felder wo hinbewegt wird, muss verändert werden
         // - Position figur muss verändert werden
         // - Punke müssen hochgezählt werden (und berechnen)
     }
 
-    public Brett getPit() {
-        return pit;
+    public Brett getPitt() {
+        return pitt;
     }
 }

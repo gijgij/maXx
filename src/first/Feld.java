@@ -1,4 +1,5 @@
 package first;
+
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,13 +11,13 @@ public enum Feld {
 
     @Override
     public String toString() {
-        if(this == ZERO) return "0";
-        return inhalt[0] + "/"+inhalt[1];
+        if (this == ZERO) return "0";
+        return inhalt[0] + "/" + inhalt[1];
     }
 
-    Feld(String fraction){
-        if (fraction == "FRACTION"){
-            inhalt= new int[]{ThreadLocalRandom.current().nextInt(10 , 999), ThreadLocalRandom.current().nextInt(1 , 999)};
+    Feld(String fraction) {
+        if (fraction == "FRACTION") {
+            inhalt = new int[]{ThreadLocalRandom.current().nextInt(10, 999), ThreadLocalRandom.current().nextInt(1, 999)};
         }
 
 

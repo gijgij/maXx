@@ -6,19 +6,21 @@ public class Spieler {
     private final Farbe farbe;
     private double Punkte;
 
-    public Spieler( Farbe farbe) {
+    public Spieler(Farbe farbe) {
         this.position = farbe.getStartposition();
         this.farbe = farbe;
         resetPunkte();
     }
 
-    public boolean hatGewonnen(){
+    public boolean hatGewonnen() {
         return Punkte > 53;
-    };
+    }
 
-    public void setPosition(int x, int y){
-        position[0]=x;
-        position[1]=y;
+    ;
+
+    public void setPosition(int x, int y) {
+        position[0] = x;
+        position[1] = y;
     }
 
     public int[] getPosition() {
@@ -34,10 +36,10 @@ public class Spieler {
     }
 
     public void addPunkte(double punkte) {
-        Punkte=+punkte;
+        Punkte = +punkte;
     }
 
-    public void resetPunkte(){
+    public void resetPunkte() {
         Punkte = 0;
     }
 }
