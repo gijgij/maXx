@@ -50,5 +50,9 @@ public class Brett {
     public void setFeld(int x, int y, Feld wert){
         brett[x][y] = wert;
     }
+
+    public Feld getFeld(int x, int y){
+        return brett[x][y];
+    }
 }
 

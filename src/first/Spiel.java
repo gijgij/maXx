@@ -99,12 +99,12 @@ public class Spiel {
 
     public void bewegen(Spieler aktuellerSpieler, int[] neuePosition) {
         aktuellerSpieler.setPosition(neuePosition[0],neuePosition[1]);
-        //pitt[neuePosition[0]][neuePosition[1]] = Feld.ZERO;
 
-        //TODO implement
-        // - Felder wo hinbewegt wird, muss verändert werden
-        // - Position figur muss verändert werden
-        // - Punke müssen hochgezählt werden (und berechnen)
+        Feld aktuellesFeld = pitt.getFeld(neuePosition[0],neuePosition[1]);
+
+        aktuellerSpieler.addPunkte(aktuellesFeld.getInhalt()[0] / aktuellesFeld.getInhalt()[1]); //TODO passt des?
+
+        pitt.setFeld(neuePosition[0],neuePosition[1],Feld.ZERO);
     }
 
     public Brett getPitt() {

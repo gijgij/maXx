@@ -23,8 +23,9 @@ public enum Feld {
         if (fraction == "FRACTION") {
             inhalt = new int[]{ThreadLocalRandom.current().nextInt(10, 999), ThreadLocalRandom.current().nextInt(1, 999)};
         }
-
-
     }
 
+    public int[] getInhalt() {
+        return inhalt;
+    }
 }
