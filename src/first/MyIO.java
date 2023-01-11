@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 /**
  * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
+ * @version 1.0, 11.01.23
+ *
  * */
 
 public class MyIO {
