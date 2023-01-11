@@ -12,7 +12,6 @@ import java.util.stream.IntStream;
 
 /**
  * @author Izabela ALmeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
- * @version 1.0
  */
 
 public class FractionStream {
