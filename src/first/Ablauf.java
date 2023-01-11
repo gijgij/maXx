@@ -12,6 +12,9 @@ public class Ablauf {
 
     public static void main(String[] args) {
 
+        //Spielbeginn Dialog
+        system.out.println("Das Spiel beginnt");
+
         Spieler aktuellerSpieler = spiel.getPitt().getSpielerW();
 
         do {
