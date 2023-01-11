@@ -81,5 +81,7 @@ public class Spiel {
         // - Punke müssen hochgezählt werden (und berechnen)
     }
 
-
+    public Brett getPit() {
+        return pit;
+    }
 }

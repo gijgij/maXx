@@ -18,9 +18,10 @@ public class Brett {
                 m=Feld.FRACTION;
             }
         }
-        brett[2][3]=Feld.ZERO; //TODO use Startposition
-        brett[5][4]=Feld.ZERO; //TODO use Startposition
-        //TODO reset spieler
+        brett[2][3]=Feld.ZERO;
+        brett[5][4]=Feld.ZERO;
+        spielerW.setPosition(2,3);
+        spielerB.setPosition(5,4);
     }
 
     public Spieler getSpielerB() {
@@ -29,6 +30,18 @@ public class Brett {
 
     public Spieler getSpielerW() {
         return spielerW;
+    }
+
+    public String[][] toStringAsArray() {
+        String[][] brettString = new String[8][8];
+        for (int i = 0; i<8; i++){
+            for (int k = 0; k<8; k++){
+                brettString[i][k]=brett[i][k].toString();
+            }
+        }
+        brettString[spielerB.getPosition()[0]][spielerB.getPosition()[1]]=spielerB.getFarbe().toString();
+        brettString[spielerW.getPosition()[0]][spielerW.getPosition()[1]]=spielerW.getFarbe().toString();
+        return brettString;
     }
 }
 
