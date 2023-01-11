@@ -100,11 +100,11 @@ public class Spiel {
     public void bewegen(Spieler aktuellerSpieler, int[] neuePosition) {
         aktuellerSpieler.setPosition(neuePosition[0],neuePosition[1]);
 
-        Feld aktuellesFeld = pitt.getFeld(neuePosition[0],neuePosition[1]);
+        Field aktuellesFeld = pitt.getFeld(neuePosition[0],neuePosition[1]);
 
         aktuellerSpieler.addPunkte(aktuellesFeld.getInhalt()[0] / aktuellesFeld.getInhalt()[1]); //TODO passt des?
 
-        pitt.setFeld(neuePosition[0],neuePosition[1],Feld.ZERO);
+        pitt.setFeld(neuePosition[0],neuePosition[1],new Field(Feldtyp.ZERO));
     }
 
     public Brett getPitt() {

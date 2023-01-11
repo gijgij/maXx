@@ -4,7 +4,7 @@ package first;
  * @author Izabela Almeida, Giovanna Janeiro, Julia Keck, Ann-Katrin Schließus
  * */
 public class Brett {
-    private Feld[][] brett = new Feld[8][8];
+    private Field[][] brett = new Field[8][8];
 
     private Spieler spielerB;
     private Spieler spielerW;
@@ -22,8 +22,8 @@ public class Brett {
                 brett[i][k] = new Field(Feldtyp.FRACTION);
             }
         }
-        brett[2][3] = Feld.ZERO;
-        brett[5][4] = Feld.ZERO;
+        brett[2][3] = new Field(Feldtyp.ZERO);
+        brett[5][4] = new Field(Feldtyp.ZERO);
         spielerW.setPosition(2, 3);
         spielerB.setPosition(5, 4);
     }
@@ -48,11 +48,11 @@ public class Brett {
         return brettString;
     }
 
-    public void setFeld(int x, int y, Feld wert){
+    public void setFeld(int x, int y, Field wert){
         brett[x][y] = wert;
     }
 
-    public Feld getFeld(int x, int y){
+    public Field getFeld(int x, int y){
         return brett[x][y];
     }
 }
