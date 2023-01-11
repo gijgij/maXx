@@ -20,8 +20,6 @@ public class Spieler {
         return Punkte > 53;
     }
 
-    ;
-
     public void setPosition(int x, int y) {
         position[0] = x;
         position[1] = y;
